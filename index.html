@@ -3,42 +3,43 @@
 <head>
     <title>Kendo UI SPA</title>
 
-        <link href="http://cdn.kendostatic.com/2013.2.716/styles/kendo.common.min.css" rel="stylesheet" />
-        <link href="http://cdn.kendostatic.com/2013.2.716/styles/kendo.moonlight.min.css" rel="stylesheet" />
+         <link href="http://cdn.kendostatic.com/2013.2.716/styles/kendo.common.min.css" rel="stylesheet" />
+        <link href="http://cdn.kendostatic.com/2013.2.716/styles/kendo.moonlight.min.css" rel="stylesheet" /> 
+		<!-- <link href="styles/kendo.common.min.css" rel="stylesheet" />
+        <link href="styles/kendo.moonlight.min.css" rel="stylesheet" /> -->
         <link href="app/app.css" rel="stylesheet" />
 
         <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-        <script src="http://cdn.kendostatic.com/2013.2.716/js/kendo.web.min.js"></script>        <script src="app/index.js"></script>
+        <script src="http://cdn.kendostatic.com/2013.2.716/js/kendo.web.min.js"></script>
+		<!-- <script src="js/jquery.min.js"></script>
+        <script src="js/kendo.web.min.js"></script> -->        <script src="app/index.js"></script>
 </head>
 <body>
 
     <div id="application"></div>
 
         <script type="text/x-kendo-template" id="layout-template">
-        <div id="wrapper" >
-            <div id="header">
-                <h1 class="logo">
-                    <a href="#/">Northwind</a></h1>
-                       </div>
-                       <div id="main-section">
-                       <section id="pre-content"></section>
-                       <section id="content"></section>
-                       </div>
-                       <div id = "footer" style="clear:both">
-                    <span id = "copyright" > Copyright &#169; 2011 - 2013 Telerik Inc. All rights reserved.</span>
-                       </div>
-                       </div>
- 
-                       </script>
+			<div id="wrapper" >
+				<div id="header">
+					<h1 class="logo"><a href="#/">Northwind</a></h1>
+				</div>
+				<div id="main-section">
+					<section id="pre-content"></section>
+					<section id="content"></section>
+				</div>
+				<div id = "footer" style="clear:both">
+					<span id = "copyright" > Copyright &#169; 2013 Telerik Inc. All rights reserved.</span>
+				</div>
+			</div>
+		</script>
 
             <script type="text/x-kendo-template" id="index-template">
-                <ul data-role="menu" 
-                data-bind="events:{ select: onSelect}">
-                        <li>Categories</li>
-            <li>Products</li>
-            <li>Suppliers</li>
-            </ul>
-        </script>
+                <ul data-role="menu" data-bind="events:{ select: onSelect}">
+					<li>Categories</li>
+					<li>Products</li>
+					<li>Suppliers</li>
+				</ul>
+			</script>
 
         <!-- categories template -->
         <script type="text/x-kendo-template" id="categories-template">
@@ -76,32 +77,32 @@
             <script type="text/x-kendo-template" id="products-item">
                 <div class="product">
                     <a href="\#/proddetails/#: ProductID #">
-            <img src = "/Images/foods/${ProductID}.jpg" alt="${ProductName} image" />
-            <h3>#:ProductName#</h3>
-            <p>#:kendo.toString(UnitPrice, "c")#</p>
-            </a>
-        </div>
-        </script>
+					<img src = "Images/foods/${ProductID}.jpg" alt="${ProductName} image" />
+					<h3>#:ProductName#</h3>
+					<p>#:kendo.toString(UnitPrice, "c")#</p>
+					</a>
+				</div>
+			</script>
 
-                        <!-- supplier template -->
-                        <script type="text/x-kendo-template" id="supplier-template">
-                            <h1 class="catalog">Supplier Catalog</h1>
-                            <div id="suppliersGrid" data-role="grid"
-                             data-sortable="true" data-pageable="true" data-filterable="true" 
-                                 data-groupable="true"
-                                 data-editable="popup"
-                                 data-columns='[
-                                 { title: "Company", field: "CompanyName"},
-                                 { title: "Contact", field: "ContactName", width:"110px"},
-                                 { title: "Title", field: "ContactTitle",width:"120px"},
-                                 { field: "Address"},
-                                 { field: "City",width:"70px" },
-                                 { field: "Country",width:"70px" },
-                                 { title: "PIN", field: "PostalCode",width:"70px" },
-                                 { field: "Region", width:"70px" },
-                                 { command: ["edit", "destroy"], title: "&nbsp;", width: "160px" }
-                                 ]'
-                                 data-bind="source: items"></div>
+		<!-- supplier template -->
+		<script type="text/x-kendo-template" id="supplier-template">
+			<h1 class="catalog">Supplier Catalog</h1>
+			<div id="suppliersGrid" data-role="grid"
+				 data-sortable="true" data-pageable="true" data-filterable="true" 
+				 data-groupable="true"
+				 data-editable="popup"
+				 data-columns='[
+				 { title: "Company", field: "CompanyName"},
+				 { title: "Contact", field: "ContactName", width:"110px"},
+				 { title: "Title", field: "ContactTitle",width:"120px"},
+				 { field: "Address"},
+				 { field: "City",width:"70px" },
+				 { field: "Country",width:"70px" },
+				 { title: "PIN", field: "PostalCode",width:"70px" },
+				 { field: "Region", width:"70px" },
+				 { command: ["edit", "destroy"], title: "&nbsp;", width: "160px" }
+				 ]'
+				 data-bind="source: items"></div>
         </script>
 
 </body>

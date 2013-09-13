@@ -15,23 +15,33 @@ var categoryDataSource = new kendo.data.DataSource({
 });
 
 var productsDataSource = new kendo.data.DataSource({
-    schema: { model: {id:"ProductID"} },
+	type:"odata",
+	schema: 
+			{ 
+				data:"value",
+				total:"['odata.count']", 
+				model: 
+					{
+						id:"ProductID"
+					} 
+			},
     transport: {
-        read: { url: window.productsPath, dataType: "json" }
-    },
+				read: { url: window.productsPath, dataType: "json" }
+			},
     pageSize: 15,
-    schema: {
-        data: "value"
-    }
+    serverPaging:true
 });
-
 var supplierDataSource = new kendo.data.DataSource({
-    schema: { model: { id: "SupplierID" } },
+	type:"odata",
+	schema: {
+				data : "value",
+				total:"['odata.count']",
+				model: { id: "SupplierID" } 
+			},
     transport: { read: { url: window.suppliersPath, dataType: "json" } },
     pageSize: 5,
-    schema: {
-        data: "value"
-    }
+    serverPaging:true,
+	serverFiltering:true
 });
 
 //data models
